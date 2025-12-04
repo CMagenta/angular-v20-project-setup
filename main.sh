@@ -14,6 +14,9 @@ mkdir -p src/app/shared
 npm install tailwindcss @tailwindcss/postcss postcss --force
 
 rm src/styles.css
+rm src/app/app.css
+echo "<router-outlet></router-outlet>" > src/app/app.html
+sed -i "/styleUrl/d" src/app/app.ts
 
 cat <<EOT > .postcssrc.json
 {
